@@ -1,0 +1,73 @@
+{
+  "name": "homehealth-features",
+  "version": "1.0.0",
+  "description": "HomeHealth common and core features Monorepo",
+  "author": "HomeHealth",
+  "license": "MIT",
+  "private": "true",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "lerna": "lerna",
+    "test": "yarn jest --clearCache && jest",
+    "publish": "cd packages/homehealth-common-feature && npm publish && cd ../homehealth-core-feature && npm publish",
+    "test:uni": "lerna run --scope homehealth-* --stream test",
+    "test:coverage": "lerna run --scope homehealth-* --stream test:coverage",
+    "lerna:build": "lerna run build",
+    "build": "lerna exec --parallel --scope homehealth-* -- babel --root-mode upward src -d dist --ignore **/*.specs.js, __tests__/*.js --copy-files",
+    "bootstrap:mobile:ci": "lerna bootstrap --ignore hh_sample_mobile",
+    "bootstrap:web:ci": "lerna bootstrap --ignore hh_sample_web",
+    "init:mobile": "yarn workspace hh_sample_mobile init",
+    "init:web": "yarn workspace hh_sample_web init",
+    "start:mobile": "yarn build && yarn workspace hh_sample_mobile start",
+    "ios": "yarn workspace hh_sample_mobile rn:ios",
+    "clean": "npx lerna clean --yes && rm -rf node_modules && npx lerna exec yarn clean:dist --ignore sample_app && rm -rf packages/example-apps/hh_sample_mobile/ios/build && rm -rf packages/example-apps/hh_sample_mobile/android/app/build",
+    "android": "yarn workspace hh_sample_mobile rn:android",
+    "web": "yarn workspace hh_sample_web rn:web",
+    "lintFix": "eslint --fix",
+    "pretty": "prettier --semi true --print-width 100 --single-quote --write",
+    "reset": "yarn clean && watchman watch-del-all && rm -rf $TMPDIR/react-native-packager-cache-* && rm -rf $TMPDIR/metro-bundler-cache-* && rm -rf node_modules/ && yarn cache clean --force && yarn install && yarn start -- --reset-cache"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "7.13.0",
+    "@babel/core": "7.13.8",
+    "@babel/preset-env": "7.13.8",
+    "@babel/preset-react": "7.12.13",
+    "@babel/preset-typescript": "7.13.0",
+    "@babel/runtime": "7.13.9",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "@testing-library/react-native": "^7.0.1",
+    "@types/jest": "^26.0.13",
+    "@types/react-redux": "^7.1.9",
+    "@types/react-test-renderer": "^16.9.3",
+    "@typescript-eslint/eslint-plugin": "^3.9.0",
+    "@typescript-eslint/parser": "^3.9.0",
+    "esdoc": "^1.1.0",
+    "esdoc-standard-plugin": "^1.0.0",
+    "eslint": "^7.14.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "4.3.0",
+    "lerna": "4.0.0",
+    "jest": "^26.6.3",
+    "jest-circus": "^26.4.2",
+    "lint-staged": "10.5.1",
+    "metro-react-native-babel-preset": "^0.64.0",
+    "mockdate": "^3.0.2",
+    "prettier": "2.0.5",
+    "pretty-quick": "3.1.0",
+    "react-dom": "^16.13.1",
+    "react-test-renderer": "16.13.1",
+    "ts-jest": "^26.3.0",
+    "ts-node-dev": "^1.0.0-pre.62",
+    "typescript": "^3.9.7"
+  },
+  "lint-staged":{
+    "*.{js,ts,tsx}":[
+      "prettier --write"
+    ]
+  }
+}

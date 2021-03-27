@@ -1,0 +1,30 @@
+# NPM
+dist
+
+# OSX
+.DS_Store
+
+# IDE
+.idea/*
+
+# node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Bundle artifact
+*.jsbundle
+coverage/*
+
+.log
+.jest-*
+lib
+node_modules
+
+jest/cache/*
+jest/coverage/*
+
+coverage
+
+# vscode
+.vscode
