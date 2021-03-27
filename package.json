@@ -18,18 +18,12 @@
     "test:coverage": "lerna run --scope homehealth-* --stream test:coverage",
     "lerna:build": "lerna run build",
     "build": "lerna exec --parallel --scope homehealth-* -- babel --root-mode upward src -d dist --ignore **/*.specs.js, __tests__/*.js --copy-files",
-    "bootstrap:mobile:ci": "lerna bootstrap --ignore hh_sample_mobile",
-    "bootstrap:web:ci": "lerna bootstrap --ignore hh_sample_web",
-    "init:mobile": "yarn workspace hh_sample_mobile init",
-    "init:web": "yarn workspace hh_sample_web init",
-    "start:mobile": "yarn build && yarn workspace hh_sample_mobile start",
-    "ios": "yarn workspace hh_sample_mobile rn:ios",
-    "clean": "npx lerna clean --yes && rm -rf node_modules && npx lerna exec yarn clean:dist --ignore sample_app && rm -rf packages/example-apps/hh_sample_mobile/ios/build && rm -rf packages/example-apps/hh_sample_mobile/android/app/build",
-    "android": "yarn workspace hh_sample_mobile rn:android",
-    "web": "yarn workspace hh_sample_web rn:web",
+    "bootstrap:mobile:ci": "lerna bootstrap",
+    "bootstrap:web:ci": "lerna bootstrap",
+    "clean": "npx lerna clean --yes && rm -rf node_modules && npx lerna exec yarn clean:dist",
     "lintFix": "eslint --fix",
     "pretty": "prettier --semi true --print-width 100 --single-quote --write",
-    "reset": "yarn clean && watchman watch-del-all && rm -rf $TMPDIR/react-native-packager-cache-* && rm -rf $TMPDIR/metro-bundler-cache-* && rm -rf node_modules/ && yarn cache clean --force && yarn install && yarn start -- --reset-cache"
+    "reset": "yarn clean && watchman watch-del-all && rm -rf $TMPDIR/metro-bundler-cache-* && rm -rf node_modules/ && yarn cache clean --force && yarn install && yarn start -- --reset-cache"
   },
   "dependencies": {},
   "devDependencies": {
