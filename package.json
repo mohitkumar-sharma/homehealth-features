@@ -4,7 +4,6 @@
   "description": "HomeHealth common and core features Monorepo",
   "author": "HomeHealth",
   "license": "MIT",
-  "private": "true",
   "workspaces": {
     "packages": [
       "packages/*"
@@ -17,15 +16,13 @@
     "test:uni": "lerna run --scope homehealth-* --stream test",
     "test:coverage": "lerna run --scope homehealth-* --stream test:coverage",
     "lerna:build": "lerna run build",
-    "build": "lerna exec --parallel --scope homehealth-* -- babel --root-mode upward src -d dist --ignore **/*.specs.js, __tests__/*.js --copy-files",
-    "bootstrap:mobile:ci": "lerna bootstrap",
-    "bootstrap:web:ci": "lerna bootstrap",
+    "build": "lerna exec --parallel --scope homehealth-* -- babel --root-mode upward src -d dist --ignore **/*.specs.js --copy-files",
+    "bootstrap:ci": "lerna bootstrap",
     "clean": "npx lerna clean --yes && rm -rf node_modules && npx lerna exec yarn clean:dist",
     "lintFix": "eslint --fix",
     "pretty": "prettier --semi true --print-width 100 --single-quote --write",
     "reset": "yarn clean && watchman watch-del-all && rm -rf $TMPDIR/metro-bundler-cache-* && rm -rf node_modules/ && yarn cache clean --force && yarn install && yarn start -- --reset-cache"
   },
-  "dependencies": {},
   "devDependencies": {
     "@babel/cli": "7.13.0",
     "@babel/core": "7.13.8",
@@ -44,9 +41,9 @@
     "eslint": "^7.14.0",
     "eslint-plugin-prettier": "^3.1.4",
     "husky": "4.3.0",
-    "lerna": "4.0.0",
     "jest": "^26.6.3",
     "jest-circus": "^26.4.2",
+    "lerna": "^4.0.0",
     "lint-staged": "10.5.1",
     "mockdate": "^3.0.2",
     "prettier": "2.0.5",
@@ -57,8 +54,8 @@
     "ts-node-dev": "^1.0.0-pre.62",
     "typescript": "^3.9.7"
   },
-  "lint-staged":{
-    "*.{js,ts,tsx}":[
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
       "prettier --write"
     ]
   }

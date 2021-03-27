@@ -1,12 +1,9 @@
 {
-  "name": "homehealth-core-feature",
+  "name": "@crowdapps/homehealth-core-feature",
   "version": "0.0.1",
   "description": "Core feature like authentications for HomeHealth App",
   "main": "dist/index.ts",
   "module": "src/index.ts",
-  "directories": {
-    "lib": "src"
-  },
   "scripts": {
     "bootstrap":"lerna bootstrap --use-workspaces",
     "clean:dist": "rm -rf dist || true",
@@ -17,11 +14,8 @@
     "pretty": "prettier --semi true --print-width 100 --single-quote --write"
   },
   "author": "HomeHealth",
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public",
-    "registry":"https://npm.pkg.github.com"
-  },
+  "license": "Copyright 2020 HomeHealth. All rights reserved.",
+  "repository": "https://github.com/mohitkumar-sharma/homehealth-features",
   "husky":{
     "hooks":{
       "pre-commit": "yarn typecheck && lint-staged",
