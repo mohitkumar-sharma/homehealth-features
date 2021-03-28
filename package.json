@@ -4,6 +4,7 @@
   "description": "HomeHealth common and core features Monorepo",
   "author": "HomeHealth",
   "license": "MIT",
+  "private": "true",
   "workspaces": {
     "packages": [
       "packages/*"
@@ -13,10 +14,10 @@
     "lerna": "lerna",
     "test": "yarn jest --clearCache && jest",
     "publish": "cd packages/homehealth-common-feature && npm publish && cd ../homehealth-core-feature && npm publish",
-    "test:uni": "lerna run --scope homehealth-* --stream test",
-    "test:coverage": "lerna run --scope homehealth-* --stream test:coverage",
+    "test:uni": "lerna run --scope @crowdapps/homehealth-* --stream test",
+    "test:coverage": "lerna run --scope @crowdapps/homehealth-* --stream test:coverage",
     "lerna:build": "lerna run build",
-    "build": "lerna exec --parallel --scope homehealth-* -- babel --root-mode upward src -d dist --ignore **/*.specs.js --copy-files",
+    "build": "lerna exec --parallel --scope @crowdapps/homehealth-* -- babel --root-mode upward src -d dist --ignore **/*.specs.js --copy-files",
     "bootstrap:ci": "lerna bootstrap",
     "clean": "npx lerna clean --yes && rm -rf node_modules && npx lerna exec yarn clean:dist",
     "lintFix": "eslint --fix",
