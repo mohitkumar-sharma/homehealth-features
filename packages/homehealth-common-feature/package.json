@@ -1,40 +1,46 @@
 {
-  "name": "@crowdapps/homehealth-common-feature",
-  "version": "0.0.4",
+  "name": "@mohitkumar-sharma/homehealth-common-feature",
+  "version": "0.0.2",
   "description": "Common feature used in HomeHealth App",
   "main": "dist/index.ts",
+  "typings": "dist/index.d.ts",
   "module": "src/index.ts",
   "scripts": {
-    "bootstrap":"lerna bootstrap --use-workspaces",
+    "bootstrap": "lerna bootstrap --use-workspaces",
     "clean:dist": "rm -rf dist || true",
-    "build":"babel src --out-dir dist --copy-files",
+    "build": "babel src --out-dir dist --copy-files",
     "prepublish": "yarn run build",
     "test": "jest --clearCache && jest --coverage",
     "lintFix": "eslint --fix",
     "pretty": "prettier --semi true --print-width 100 --single-quote --write"
   },
   "author": "HomeHealth",
-  "license": "Copyright 2020 HomeHealth. All rights reserved.",
+  "license": "MIT",
   "repository": "https://github.com/mohitkumar-sharma/homehealth-features",
-  "husky":{
-    "hooks":{
+  "husky": {
+    "hooks": {
       "pre-commit": "yarn typecheck && lint-staged",
       "pre-push": "yarn test",
       "preapre-commit-msg": "exec < /dev/tty && git cz --hook || true"
     }
   },
-  "dependencies": {},
   "peerDependencies": {
-    "react": ">=16.13.1",
-    "redux": ">=4.0.5",
-    "redux-saga": ">=1.1.3",
     "@reduxjs/toolkit": ">=1.4.0",
     "axios": ">=0.21.1",
-    "moment": ">=2.29.1"
+    "moment": ">=2.29.1",
+    "react": ">=16.13.1",
+    "redux": ">=4.0.5",
+    "redux-saga": ">=1.1.3"
   },
-  "devDependencies": {},
-  "lint-staged":{
-    "*.{js,ts,tsx}":[
+  "devDependencies": {
+    "@types/react": "^16.9.46",
+    "@types/react-redux": "^7.1.9",
+    "@typescript-eslint/eslint-plugin": "^3.9.0",
+    "@typescript-eslint/parser": "^3.9.0",
+    "typescript": "^3.9.7"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
       "eslint ./src --fix-dry-run",
       "prettier --write"
     ]

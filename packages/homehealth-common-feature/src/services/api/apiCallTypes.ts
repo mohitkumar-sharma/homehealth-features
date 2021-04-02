@@ -1,0 +1,15 @@
+export default {
+  LOGIN: 'login',
+  SIGNUP: 'signup',
+  BOARD_LIST: 'boardList',
+  SCHEDULE_LIST: 'scheduleList',
+  UPCOMING_PATIENT_LIST: 'upcomingPatientList',
+  BOARD_APPOINTMENT_ACCEPT: 'boardAppointmentAccept',
+  BOARD_APPOINTMENT_REJECT: 'boardAppointmentDecline',
+  SCHEDULE_APPOINTMENT_ACCEPT: 'scheduleAppointmentAccept',
+  SCHEDULE_APPOINTMENT_REJECT: 'scheduleAppointmentDecline',
+  NEW_FULLFILLMENTS_SEARCH_QUERY: 'newFullfillmentsSearchQuery',
+  COMPLETE_APPOINTMENT: 'completeAppointment',
+  GET_GENERAL_AVAILABILITY: 'getGeneralAvailability',
+  GET_UPCOMING_AVAILABILITY: 'getUpcomingAvailability',
+};

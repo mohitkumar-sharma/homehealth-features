@@ -1,5 +1,0 @@
-lib
-coverage
-jest/cache/*
-jest/coverage/*
-__mocks__

@@ -4,6 +4,7 @@ module.exports = {
   parserOptions: {
     tsconfigRootDir: __dirname,
     project: ['./tsconfig.json'],
+    createDefaultProgram: true,
   },
   plugins: ['@typescript-eslint'],
   extends: ['@react-native-community', 'plugin:@typescript-eslint/recommended'],
@@ -16,18 +17,7 @@ module.exports = {
   },
   overrides: [
     // {
-    //   files: ['_setup_/testsSetup.js'],
-    //   env: {
-    //     jest: true,
-    //     'jest/globals': true,
-    //   },
-    //   rules: {
-    //     '@typescript-eslint/no-var-requires': 'off',
-    //     '@typescript-eslint/no-empty-function': 'off',
-    //   },
-    // },
-    // {
-    //   files: ['app/**/*.{ts,tsx}'],
+    //   files: ['packages/**'],
     //   rules: {
     //     '@typescript-eslint/explicit-function-return-type': ['warn'],
     //     '@typescript-eslint/explicit-member-accessibility': ['warn'],
@@ -36,7 +26,7 @@ module.exports = {
     //   },
     // },
     // {
-    //   files: ['app/sagas/*.ts', 'app/navigations/**/*.{ts,tsx}'],
+    //   files: ['./packages/homehealth-common-feature/src/sagas/*.ts'],
     //   rules: {
     //     '@typescript-eslint/explicit-function-return-type': 'off',
     //     '@typescript-eslint/explicit-module-boundary-types': 'off',
