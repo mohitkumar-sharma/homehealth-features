@@ -1,4 +1,4 @@
-import { enumUtils } from '../utils';
+import { enumUtils } from '../../utils';
 
 // Common Availability
 

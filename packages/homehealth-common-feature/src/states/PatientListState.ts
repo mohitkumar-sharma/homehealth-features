@@ -2,7 +2,7 @@ import { createSlice, createAction, PayloadAction } from '@reduxjs/toolkit';
 import {
   UpcomingPatientListProps,
   UpcomingPatientSectionedListResultProps,
-} from '../types/upcoming-patient-list';
+} from '../types/otherPropTypes/upcoming-patient-list';
 import { PatientListDataStateProps } from './statesPropsTypes/patient-list-state-props';
 import { ReduxStateProps } from './statesPropsTypes/redux-states-props';
 import { patientListUtils } from '../utils';

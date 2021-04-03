@@ -1,5 +1,5 @@
 import { createSlice, createAction, PayloadAction } from '@reduxjs/toolkit';
-import { UIProps } from '../types/ui';
+import { UIProps } from '../types/otherPropTypes/ui';
 
 interface UISelectorProps {
   /* as a type of UserProps for selector*/

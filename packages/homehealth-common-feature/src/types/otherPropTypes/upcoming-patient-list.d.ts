@@ -1,4 +1,4 @@
-import { enumUtils } from '../utils';
+import { enumUtils } from '../../utils';
 
 export interface UpcomingPatientListFullfillmentMetricsProps {
   title?: string | null;

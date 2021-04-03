@@ -2,8 +2,8 @@ import {
   GeneralAvailabilityProps,
   CommonAvailabilityProps,
   UpcomingAvailabilityProps,
-} from '../../types/availability';
-import { ApiErrorResponseProps } from '../../types/api-common-responses';
+} from '../../types/otherPropTypes/availability';
+import { ApiErrorResponseProps } from '../../types/otherPropTypes/api-common-responses';
 
 export interface AvailabilityDataStateProps {
   /* as a type of CommonAvailabilityProps or null */

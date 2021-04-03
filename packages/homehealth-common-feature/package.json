@@ -1,9 +1,9 @@
 {
   "name": "@mohitkumar-sharma/homehealth-common-feature",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "description": "Common feature used in HomeHealth App",
-  "main": "dist/index.d.ts",
-  "module": "src/index.d.ts",
+  "main": "dist/index.ts",
+  "module": "src/index.ts",
   "scripts": {
     "bootstrap": "lerna bootstrap --use-workspaces",
     "clean:dist": "rm -rf dist || true",

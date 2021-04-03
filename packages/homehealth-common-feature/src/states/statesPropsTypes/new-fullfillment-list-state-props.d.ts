@@ -1,4 +1,7 @@
-import { FullfillmentListProps, FullfillmentListResultsProps } from '../../types/fullfillment-list';
+import {
+  FullfillmentListProps,
+  FullfillmentListResultsProps,
+} from '../../types/otherPropTypes/fullfillment-list';
 
 export interface NewFullfillmentsListDataStateProps {
   /* as a type of FullfillmentListProps or null */

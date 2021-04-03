@@ -1,17 +1,17 @@
-import { enumUtils } from '../utils';
+import { enumUtils } from '../../utils';
 
-export interface BoardFullfillmentMetricsProps {
+export interface ScheduleListFullfillmentMetricsProps {
   title?: string | null;
   pk?: number | null;
 }
 
-export interface BoardFullfillmentProps {
+export interface ScheduleListFullfillmentProps {
   title?: string | null;
   pk?: number | null;
-  metrics?: BoardFullfillmentMetricsProps[] | [] | null;
+  metrics?: ScheduleListFullfillmentMetricsProps[] | [] | null;
 }
 
-export interface BoardPatientPersonalProfileProps {
+export interface ScheduleListPatientPersonalProfileProps {
   dob?: any | null;
   address_1?: string | null;
   address_2?: string | null;
@@ -24,13 +24,13 @@ export interface BoardPatientPersonalProfileProps {
   sex?: string | '' | null;
 }
 
-export interface BoardPatientProps {
+export interface ScheduleListPatientProps {
   first_name?: string | null;
   last_name?: string | null;
-  personalprofile?: BoardPatientPersonalProfileProps | null;
+  personalprofile?: ScheduleListPatientPersonalProfileProps | null;
 }
 
-export interface BoardPracticeProfileProps {
+export interface ScheduleListPracticeProfileProps {
   email?: string | null;
   image?: string | '' | null;
   phone?: string | '' | null;
@@ -48,27 +48,26 @@ export interface BoardPracticeProfileProps {
   tag_line?: string | '' | null;
 }
 
-export interface BoardPracticeProps {
+export interface ScheduleListPracticeProps {
   name?: string | null;
-  profile?: BoardPracticeProfileProps | null;
+  profile?: ScheduleListPracticeProfileProps | null;
 }
 
-export interface BoardResultsProps {
+export interface ScheduleListResultsProps {
   pk?: number | null;
   worker?: any | null;
-  patient?: BoardPatientProps | null;
-  practice?: BoardPracticeProps | null;
+  patient?: ScheduleListPatientProps | null;
+  practice?: ScheduleListPracticeProps | null;
   date_from?: any | null;
   date_to?: any | null;
   description?: string | null;
-  fullfillments?: BoardFullfillmentProps[] | [] | null;
+  fullfillments?: ScheduleListFullfillmentProps[] | null;
   status?: enumUtils.scheduleStatus | null;
-  practice_status?: enumUtils.practiceStatus | null;
 }
 
-export interface BoardProps {
+export interface ScheduleListProps {
   count?: number | null;
   next?: any | null;
   previous?: any | null;
-  results?: BoardResultsProps[] | [] | null;
+  results?: ScheduleListResultsProps[] | [] | null;
 }

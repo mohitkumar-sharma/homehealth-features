@@ -1,5 +1,5 @@
-import { UpcomingPatientListProps } from '../../types/upcoming-patient-list';
-import { ApiErrorResponseProps } from '../../types/api-common-responses';
+import { UpcomingPatientListProps } from '../../types/otherPropTypes/upcoming-patient-list';
+import { ApiErrorResponseProps } from '../../types/otherPropTypes/api-common-responses';
 
 export interface PatientListDataStateProps {
   /* as a type of UpcomingPatientListProps or null */

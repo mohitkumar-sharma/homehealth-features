@@ -1,7 +1,4 @@
-export interface InjectConfigurationSettingsProps {
-  reduxStore: any;
-  apiBaseUrl: string;
-}
+import { InjectConfigurationSettingsProps } from '../types/control-settings-props';
 
 const configurationSettings: InjectConfigurationSettingsProps = {
   reduxStore: null,

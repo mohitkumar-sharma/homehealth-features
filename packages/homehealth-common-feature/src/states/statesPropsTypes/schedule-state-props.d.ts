@@ -1,5 +1,5 @@
-import { ScheduleListProps } from '../../types/schedule';
-import { ApiErrorResponseProps } from '../../types/api-common-responses';
+import { ScheduleListProps } from '../../types/otherPropTypes/schedule';
+import { ApiErrorResponseProps } from '../../types/otherPropTypes/api-common-responses';
 import { enumUtils } from '../../utils';
 
 export interface PendingScheduleAcceptRejectResponseProps {

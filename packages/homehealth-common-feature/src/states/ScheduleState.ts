@@ -1,5 +1,5 @@
 import { createSlice, createAction, PayloadAction } from '@reduxjs/toolkit';
-import { ScheduleListProps, ScheduleListResultsProps } from '../types/schedule';
+import { ScheduleListProps, ScheduleListResultsProps } from '../types/otherPropTypes/schedule';
 import { enumUtils } from '../utils';
 import {
   ScheduleDataStateProps,

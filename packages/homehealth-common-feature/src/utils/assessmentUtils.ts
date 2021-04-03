@@ -1,27 +1,11 @@
-import { UpcomingPatientListFullfillmentProps } from '../types/upcoming-patient-list';
+import { UpcomingPatientListFullfillmentProps } from '../types/otherPropTypes/upcoming-patient-list';
 import config from '../config';
-
-export interface ValuesParamsProps {
-  skill_id: number;
-  value: any;
-  metric_id: number;
-}
-
-export interface ExistingValuesFuncReturDataProps {
-  indexFound: number;
-  isFound: boolean;
-}
-
-export interface ValidateDataToAddAssessmentReturnProps {
-  isValid: boolean;
-  message: string;
-  selectedValues: ValuesParamsProps[];
-}
-
-export interface CheckIfAnySelectedValueMissingFuncReturnProps {
-  isValueMissing: boolean;
-  message: string;
-}
+import {
+  ValuesParamsProps,
+  ExistingValuesFuncReturDataProps,
+  ValidateDataToAddAssessmentReturnProps,
+  CheckIfAnySelectedValueMissingFuncReturnProps,
+} from '../types/utilsPropTypes/assessment-utils-props';
 
 /**
  * This function will check whether the item is already selected or not

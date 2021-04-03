@@ -11,7 +11,7 @@ import {
   CommonAvailabilitySlotsProps,
   GeneralAvailabilityProps,
   GeneralAvailabilitySlotsProps,
-} from '../types/availability';
+} from '../types/otherPropTypes/availability';
 import { availabilityStatus } from './enumUtils';
 
 /**

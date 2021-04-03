@@ -1,5 +1,5 @@
 import { createSlice, createAction, PayloadAction } from '@reduxjs/toolkit';
-import { UserProps } from '../types/user';
+import { UserProps } from '../types/otherPropTypes/user';
 
 interface UserSelectorProps {
   /* as a type of UserProps for selector*/

@@ -1,21 +1,11 @@
 import moment from 'moment';
 import config from '../config';
 import { datesComparisonStatus } from './enumUtils';
-
-export interface DOBToAgeCoverterProps {
-  dob: string | Date;
-  dobFormat: string;
-}
-
-export interface DateToSectionDayTitleConverterProps {
-  sectionDate: string | Date;
-  dateFormat: string;
-}
-
-export interface ConvertGeneralAvailabilityDateToDayProps {
-  date: string;
-  day: string;
-}
+import {
+  DOBToAgeCoverterProps,
+  DateToSectionDayTitleConverterProps,
+  ConvertGeneralAvailabilityDateToDayProps,
+} from '../types/utilsPropTypes/date-utils-props';
 
 /**
  * This function converts the string date to texts like Today, Yesterday or date(eg. 10 Dec, 10 Dec 2019)

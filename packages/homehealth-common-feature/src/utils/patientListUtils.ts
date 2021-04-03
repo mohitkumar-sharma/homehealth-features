@@ -1,7 +1,7 @@
 import {
   UpcomingPatientListResultsProps,
   UpcomingPatientSectionedListResultProps,
-} from '../types/upcoming-patient-list';
+} from '../types/otherPropTypes/upcoming-patient-list';
 import moment from 'moment';
 import { convertDateToOtherFormat } from './dateUtils';
 import config from '../config';

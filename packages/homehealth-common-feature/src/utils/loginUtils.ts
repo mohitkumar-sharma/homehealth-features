@@ -1,18 +1,8 @@
 import config from '../config';
-
-export interface ValidationResponseProps {
-  /** status as a boolean */
-  status: boolean;
-  /** message as a string */
-  message: string;
-}
-
-export interface ValidateLoginCredentialsProps {
-  /** email as a string */
-  email: string;
-  /** password as a string */
-  password: string;
-}
+import {
+  ValidationResponseProps,
+  ValidateLoginCredentialsProps,
+} from '../types/utilsPropTypes/login-utils-props';
 
 /**
  * This function will validate the email address by validating '@' and '.' in email address

@@ -1,5 +1,8 @@
 import { createSlice, createAction, PayloadAction } from '@reduxjs/toolkit';
-import { FullfillmentListResultsProps, FullfillmentListProps } from '../types/fullfillment-list';
+import {
+  FullfillmentListResultsProps,
+  FullfillmentListProps,
+} from '../types/otherPropTypes/fullfillment-list';
 import { NewFullfillmentsListDataStateProps } from './statesPropsTypes/new-fullfillment-list-state-props';
 import { ReduxStateProps } from './statesPropsTypes/redux-states-props';
 import { assessmentUtils, commonUtils } from '../utils';

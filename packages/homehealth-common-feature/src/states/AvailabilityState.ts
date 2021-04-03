@@ -3,7 +3,7 @@ import {
   UpcomingAvailabilityProps,
   UpcomingAvailabilityResultProps,
   CommonAvailabilityProps,
-} from '../types/availability';
+} from '../types/otherPropTypes/availability';
 import { AvailabilityDataStateProps } from './statesPropsTypes/availability-state-props';
 import { ReduxStateProps } from './statesPropsTypes/redux-states-props';
 import { availabilityUtils } from '../utils';

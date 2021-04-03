@@ -1,5 +1,5 @@
 import { createSlice, createAction, PayloadAction } from '@reduxjs/toolkit';
-import { BoardProps, BoardResultsProps } from '../types/board';
+import { BoardProps, BoardResultsProps } from '../types/otherPropTypes/board';
 import { enumUtils } from '../utils';
 import { BoardDataStateProps } from './statesPropsTypes/board-state-props';
 import { ReduxStateProps } from './statesPropsTypes/redux-states-props';

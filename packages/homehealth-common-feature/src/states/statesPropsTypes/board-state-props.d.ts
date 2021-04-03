@@ -1,5 +1,5 @@
-import { BoardProps } from '../../types/board';
-import { ApiErrorResponseProps } from '../../types/api-common-responses';
+import { BoardProps } from '../../types/otherPropTypes/board';
+import { ApiErrorResponseProps } from '../../types/otherPropTypes/api-common-responses';
 import { enumUtils } from '../../utils';
 
 export interface BoardDataStateProps {
