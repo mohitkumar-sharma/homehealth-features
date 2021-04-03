@@ -4,6 +4,7 @@
   "description": "HomeHealth configurations, common and core features Monorepo",
   "author": "HomeHealth",
   "license": "Copyright 2021 HomeHealth. All rights reserved.",
+  "private":"true",
   "workspaces": {
     "packages": [
       "packages/*"
@@ -32,6 +33,8 @@
     "@babel/preset-typescript": "7.13.0",
     "@react-native-community/eslint-config": "^2.0.0",
     "@types/jest": "^26.0.13",
+    "@types/react": "^16.9.43",
+    "@types/react-dom": "^16.9.8",
     "@types/react-redux": "^7.1.9",
     "@types/react-test-renderer": "^16.9.3",
     "@typescript-eslint/eslint-plugin": "^3.9.0",
@@ -48,11 +51,14 @@
     "mockdate": "^3.0.2",
     "prettier": "2.0.5",
     "pretty-quick": "3.1.0",
-    "react-dom": "^16.13.1",
     "react-test-renderer": "16.13.1",
     "ts-jest": "^26.3.0",
     "ts-node-dev": "^1.0.0-pre.62",
     "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [
