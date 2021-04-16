@@ -1,9 +1,7 @@
 import { createSlice, createAction, PayloadAction } from '@reduxjs/toolkit';
-import {
-  AppointmentsDataStateProps,
-  CompleteAppointmentApiResultProps,
-} from './statesPropsTypes/appointments-state-props';
+import { AppointmentsDataStateProps } from './statesPropsTypes/appointments-state-props';
 import { ReduxStateProps } from './statesPropsTypes/redux-states-props';
+import { ApiCompletionResultProps } from '../types/otherPropTypes/api-common-responses';
 
 const initialState: AppointmentsDataStateProps = {
   /* as a null by default */
@@ -59,7 +57,7 @@ const {
 // SELECTOR
 const selectCompleteAppointmentApiResponse = ({
   appointments,
-}: ReduxStateProps): CompleteAppointmentApiResultProps | null => {
+}: ReduxStateProps): ApiCompletionResultProps | null => {
   if (
     appointments?.completeAppointmentApiResult &&
     appointments.completeAppointmentApiResult.isCompleted

@@ -43,3 +43,25 @@ export interface UpcomingAvailabilityProps {
   previous?: any | null;
   results?: UpcomingAvailabilityResultProps[] | [] | null;
 }
+
+// update common availability payload props
+export interface UpdateCommonAvailabilityPayloadProps {
+  weekday: string;
+  slotTime: string;
+  slotIndex: number;
+}
+
+export interface PostGeneralAvailabilityApiDaySlotsProps {
+  '0': string[] | [];
+  '1': string[] | [];
+  '2': string[] | [];
+  '3': string[] | [];
+  '4': string[] | [];
+  '5': string[] | [];
+  '6': string[] | [];
+}
+
+export interface PostGeneralAvailabilityApiProps {
+  day_slots: PostGeneralAvailabilityApiDaySlotsProps;
+  start_date: string;
+}

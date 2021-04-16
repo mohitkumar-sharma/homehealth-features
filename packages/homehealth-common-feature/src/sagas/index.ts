@@ -13,6 +13,7 @@ import { watchCompleteAppointment } from './HHAppointments';
 import {
   watchGetGeneralAvailabilityData,
   watchGetUpcomingAvailabilityData,
+  watchPostGeneralAvailabilityData,
 } from './HHAvailability';
 
 export default function* rootSaga(): any {
@@ -28,5 +29,6 @@ export default function* rootSaga(): any {
     fork(watchCompleteAppointment),
     fork(watchGetGeneralAvailabilityData),
     fork(watchGetUpcomingAvailabilityData),
+    fork(watchPostGeneralAvailabilityData),
   ]);
 }

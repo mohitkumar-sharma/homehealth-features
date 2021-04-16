@@ -3,7 +3,10 @@ import {
   CommonAvailabilityProps,
   UpcomingAvailabilityProps,
 } from '../../types/otherPropTypes/availability';
-import { ApiErrorResponseProps } from '../../types/otherPropTypes/api-common-responses';
+import {
+  ApiErrorResponseProps,
+  ApiCompletionResultProps,
+} from '../../types/otherPropTypes/api-common-responses';
 
 export interface AvailabilityDataStateProps {
   /* as a type of CommonAvailabilityProps or null */
@@ -16,4 +19,8 @@ export interface AvailabilityDataStateProps {
   generalAvailabilityDataErrorResponse?: ApiErrorResponseProps | null;
   /* as a type of ApiErrorResponseProps or null */
   upcomingAvailabilityDataErrorResponse?: ApiErrorResponseProps | null;
+  /* as a type of number */
+  selectedGeneralAvailabilityDayCardIndex: number;
+  /* as a type of ApiCompletionResultProps or null */
+  postGeneralAvailabilityApiCompletionResult: ApiCompletionResultProps | null;
 }

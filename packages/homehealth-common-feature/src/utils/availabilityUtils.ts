@@ -11,8 +11,12 @@ import {
   CommonAvailabilitySlotsProps,
   GeneralAvailabilityProps,
   GeneralAvailabilitySlotsProps,
+  UpdateCommonAvailabilityPayloadProps,
+  PostGeneralAvailabilityApiDaySlotsProps,
+  PostGeneralAvailabilityApiProps,
 } from '../types/otherPropTypes/availability';
 import { availabilityStatus } from './enumUtils';
+import moment from 'moment';
 
 /**
  * This function generates the next days date. how many next dates depends on the value of `noOfNextDaysAvailabilityDates`
@@ -137,4 +141,122 @@ export const isDaySelected = (
     return status === datesComparisonStatus.EQUAL ? true : false;
   }
   return false;
+};
+
+/**
+ * This function updates the general availability data and returns the updated general availability
+ * data array
+ * @param generalAvailabilityArr : generalAvailabilityArr as a type of CommonAvailabilityProps
+ * @param payload : payload as a type of UpdateCommonAvailabilityPayloadProps
+ * @returns
+ */
+export const updateGeneralAvailabilityData = (
+  generalAvailabilityArr: CommonAvailabilityProps[],
+  payload: UpdateCommonAvailabilityPayloadProps,
+): CommonAvailabilityProps[] => {
+  if (generalAvailabilityArr.length > 0 && payload?.weekday) {
+    const sectionDataIndex = generalAvailabilityArr.findIndex(
+      (mainObj: CommonAvailabilityProps) =>
+        mainObj?.weekday?.toLowerCase() === payload.weekday.toLowerCase(),
+    );
+    if (sectionDataIndex !== -1) {
+      const mainDataToUpdate = generalAvailabilityArr[sectionDataIndex];
+      const slots = mainDataToUpdate?.slots ?? [];
+      const newSlots = slots.map((slotObj) => {
+        const rowObject: CommonAvailabilitySlotsProps = Object.assign({}, slotObj);
+        if (rowObject.time === payload.slotTime) {
+          rowObject.appointment =
+            rowObject.appointment === availabilityStatus.AVAILABLE
+              ? availabilityStatus.NOT_AVAILABLE
+              : availabilityStatus.AVAILABLE;
+          return { ...rowObject };
+        }
+        return rowObject;
+      });
+      mainDataToUpdate.slots = [...newSlots];
+      generalAvailabilityArr[sectionDataIndex] = mainDataToUpdate;
+    }
+  }
+  return generalAvailabilityArr;
+};
+
+/**
+ * This function returns the updated Day slot object
+ * @param day : day name
+ * @param previousDaySlots : previously selected day slots object
+ * @returns
+ */
+export const updateDaySlots = (
+  day: string,
+  previousDaySlots: any,
+  newSlot: string,
+): PostGeneralAvailabilityApiDaySlotsProps => {
+  switch (day.toLowerCase()) {
+    case 'monday':
+      previousDaySlots['0'].push(newSlot);
+      break;
+
+    case 'tuesday':
+      previousDaySlots['1'].push(newSlot);
+      break;
+
+    case 'wednesday':
+      previousDaySlots['2'].push(newSlot);
+      break;
+
+    case 'thursday':
+      previousDaySlots['3'].push(newSlot);
+      break;
+
+    case 'friday':
+      previousDaySlots['4'].push(newSlot);
+      break;
+
+    case 'saturday':
+      previousDaySlots['5'].push(newSlot);
+      break;
+
+    case 'sunday':
+      previousDaySlots['6'].push(newSlot);
+      break;
+
+    default:
+      previousDaySlots['0'].push(newSlot);
+      break;
+  }
+  return previousDaySlots;
+};
+
+/**
+ * This function returns the default selected availability slots array
+ * @param generalAvailabilityArr : original generalAvailabilityArr
+ * @returns
+ */
+export const getDefaultSelectedGeneralAvailabilitySlotsData = (
+  generalAvailabilityArr: CommonAvailabilityProps[],
+): PostGeneralAvailabilityApiProps => {
+  let daySlots: PostGeneralAvailabilityApiDaySlotsProps = {
+    '0': [],
+    '1': [],
+    '2': [],
+    '3': [],
+    '4': [],
+    '5': [],
+    '6': [],
+  };
+  generalAvailabilityArr.map((dataObject) => {
+    dataObject.slots?.map((slotObject: CommonAvailabilitySlotsProps) => {
+      if (
+        slotObject.appointment === availabilityStatus.AVAILABLE &&
+        slotObject.slot &&
+        dataObject.weekday
+      ) {
+        daySlots = updateDaySlots(dataObject.weekday, daySlots, slotObject.slot);
+      }
+    });
+  });
+  const todaysDate = moment(generalAvailabilityArr[0].date).format(
+    config.strings.DFM_BOARD_PATIENT_DOB,
+  );
+  return { start_date: todaysDate, day_slots: daySlots };
 };

@@ -36,6 +36,11 @@ export const apiCalls = ({ apiType }: ApiCallsProps): ApiCallsReturnProps => {
       requestUrl = apiContainersUrl.COMPLETE_APPOINTMENT_URL;
       break;
 
+    case apiCallTypes.POST_GENERAL_AVAILABILITY:
+      requestType = 'POST';
+      requestUrl = apiContainersUrl.POST_GENERAL_AVAILABILITY_URL;
+      break;
+
     /* GET requests */
     case apiCallTypes.BOARD_LIST:
       requestType = 'GET';

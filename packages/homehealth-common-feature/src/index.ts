@@ -18,6 +18,9 @@ export type {
   UpcomingAvailabilitySlotsProps,
   UpcomingAvailabilityResultProps,
   UpcomingAvailabilityProps,
+  UpdateCommonAvailabilityPayloadProps,
+  PostGeneralAvailabilityApiDaySlotsProps,
+  PostGeneralAvailabilityApiProps,
 } from './types/otherPropTypes/availability';
 export type {
   BoardFullfillmentMetricsProps,

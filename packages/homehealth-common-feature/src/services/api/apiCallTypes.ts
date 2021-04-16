@@ -12,4 +12,5 @@ export default {
   COMPLETE_APPOINTMENT: 'completeAppointment',
   GET_GENERAL_AVAILABILITY: 'getGeneralAvailability',
   GET_UPCOMING_AVAILABILITY: 'getUpcomingAvailability',
+  POST_GENERAL_AVAILABILITY: 'postGeneralAvailability',
 };

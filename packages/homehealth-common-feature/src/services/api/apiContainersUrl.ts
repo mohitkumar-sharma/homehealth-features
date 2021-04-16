@@ -12,4 +12,5 @@ export default {
   COMPLETE_APPOINTMENT_URL: 'complete_appointment/',
   GET_GENERAL_AVAILABILITY_URL: 'get_general_availability/',
   GET_UPCOMING_AVAILABILITY_URL: 'get_upcoming_availability/',
+  POST_GENERAL_AVAILABILITY_URL: 'post_general_availability/',
 };
