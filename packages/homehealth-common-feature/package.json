@@ -1,6 +1,6 @@
 {
   "name": "@mohitkumar-sharma/homehealth-common-feature",
-  "version": "0.0.19",
+  "version": "0.0.21",
   "description": "Common feature used in HomeHealth App",
   "main": "dist/index.ts",
   "module": "src/index.ts",

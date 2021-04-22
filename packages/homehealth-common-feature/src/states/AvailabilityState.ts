@@ -125,7 +125,8 @@ const removePostGeneralAvailabilityApiCompletionResponse = (
   action: PayloadAction<{ isResetGeneralAvailabilityData: boolean }>,
 ): void => {
   state.postGeneralAvailabilityApiCompletionResult = null;
-  if (action?.payload?.isResetGeneralAvailabilityData && state?.generalAvailabilityData) {
+  const isResetGeneralAvailabilityData = action?.payload?.isResetGeneralAvailabilityData ?? false;
+  if (isResetGeneralAvailabilityData && state?.generalAvailabilityData) {
     const actionForGA = { payload: { generalAvailabilityData: state.generalAvailabilityData } };
     saveGeneralAvailabilityDataResponse(state, actionForGA);
   }

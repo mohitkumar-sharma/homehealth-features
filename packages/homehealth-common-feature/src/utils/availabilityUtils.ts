@@ -94,7 +94,9 @@ export const getParsedGeneralAvailabilityArr = (
       const slotsArr: CommonAvailabilitySlotsProps[] = [...sectionObject.slots];
       const newSlots = slotsArr.map((rowObject: CommonAvailabilitySlotsProps) => {
         const apiDataSlotIndexFound = apiDataSlots.findIndex(
-          (apiSlotObj) => rowObject.slot === formatTimeInHrsForAvailability(apiSlotObj.slot),
+          (apiSlotObj) =>
+            rowObject.slot === formatTimeInHrsForAvailability(apiSlotObj.slot) &&
+            apiSlotObj.weekday === sectionObject.weekday,
         );
         const newRowObject: CommonAvailabilitySlotsProps = Object.assign({}, rowObject);
         if (apiDataSlotIndexFound !== -1) {

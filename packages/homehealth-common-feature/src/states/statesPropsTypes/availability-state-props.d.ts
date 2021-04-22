@@ -20,7 +20,7 @@ export interface AvailabilityDataStateProps {
   /* as a type of ApiErrorResponseProps or null */
   upcomingAvailabilityDataErrorResponse?: ApiErrorResponseProps | null;
   /* as a type of number */
-  selectedGeneralAvailabilityDayCardIndex: number;
+  selectedGeneralAvailabilityDayCardIndex?: number;
   /* as a type of ApiCompletionResultProps or null */
-  postGeneralAvailabilityApiCompletionResult: ApiCompletionResultProps | null;
+  postGeneralAvailabilityApiCompletionResult?: ApiCompletionResultProps | null;
 }
