@@ -34,7 +34,7 @@ export const sortPatientListArrOnTimeslotDate = (
  * @param dataArray : is of type UpcomingPatientSectionedListResultProps
  */
 export const getUniqueDates = (dataArray: UpcomingPatientListResultsProps[]): string[] | [] => {
-  const uniqueArr = [...new Set(dataArray.map((data) => data.timeslot?.date ?? ''))];
+  const uniqueArr = [...Array.from(new Set(dataArray.map((data) => data.timeslot?.date ?? '')))];
   return uniqueArr;
 };
 
