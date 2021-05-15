@@ -95,9 +95,8 @@ const savePostGeneralAvailabilityApiCompletionResponse = (
   state: AvailabilityDataStateProps,
   action: PayloadAction<AvailabilityDataStateProps>,
 ): void => {
-  const response: ApiCompletionResultProps =
+  state.postGeneralAvailabilityApiCompletionResult =
     action.payload.postGeneralAvailabilityApiCompletionResult;
-  state.postGeneralAvailabilityApiCompletionResult = response;
 };
 
 /**
@@ -127,7 +126,10 @@ const removePostGeneralAvailabilityApiCompletionResponse = (
   state.postGeneralAvailabilityApiCompletionResult = null;
   const isResetGeneralAvailabilityData = action?.payload?.isResetGeneralAvailabilityData ?? false;
   if (isResetGeneralAvailabilityData && state?.generalAvailabilityData) {
-    const actionForGA = { payload: { generalAvailabilityData: state.generalAvailabilityData } };
+    const actionForGA = {
+      payload: { generalAvailabilityData: state.generalAvailabilityData },
+      type: '',
+    };
     saveGeneralAvailabilityDataResponse(state, actionForGA);
   }
 };
